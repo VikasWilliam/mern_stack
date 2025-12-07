@@ -1,23 +1,17 @@
-import { useState, react } from "react";
-import Child from "./Child";
-import "./app.css"
+import { useState, react } from 'react'
+import './App.css'
+import User from './getUser/USer'
+import AppRouter from './Router'
+import { Toaster } from 'react-hot-toast'
 
-const App=()=>{
-
-  const [childData,setChildData]= useState("");
-
-  const handleDataFromChild=(data)=>{
-    setChildData(data)
-  }
-
-
-  return(
+const App = () => {
+  return (
     <div>
       <h1>Parent Component</h1>
-      <Child sendDataToParent={handleDataFromChild}></Child>
-      <p>Data from child: {childData}</p>
+      <AppRouter />
+      <Toaster />
     </div>
   )
 }
 
-export default App;
+export default App
